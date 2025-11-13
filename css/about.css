@@ -1,0 +1,178 @@
+/* ========================================
+   ABOUT PAGE STYLES
+   ======================================== */
+
+/* Page Header */
+.page-header {
+  padding: var(--space-5xl) 0 var(--space-4xl);
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg-app) 100%);
+}
+
+/* Founder Section */
+.founder-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5xl);
+  align-items: center;
+}
+
+.founder-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 5/6;
+}
+
+.founder-content {
+  padding: var(--space-xl) 0;
+}
+
+.founder-content h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.founder-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+/* Mission Section */
+.mission-section {
+  background: var(--gradient-accent-soft);
+}
+
+.mission-card {
+  padding: var(--space-4xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Legal Section */
+.legal-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.legal-grid {
+  margin-bottom: var(--space-3xl);
+}
+
+.legal-card {
+  padding: var(--space-3xl);
+  height: 100%;
+}
+
+.legal-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg);
+}
+
+.legal-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.legal-disclaimer {
+  padding: var(--space-2xl);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.legal-disclaimer p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Community Section */
+.community-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5xl);
+  align-items: center;
+}
+
+.community-content h2 {
+  margin-bottom: var(--space-lg);
+}
+
+.community-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.community-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 5/4;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--color-bg-elevated);
+}
+
+.cta-card {
+  padding: var(--space-4xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .founder-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .founder-image {
+    order: -1;
+  }
+
+  .community-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .community-image {
+    order: -1;
+  }
+
+  .mission-card {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .legal-card {
+    padding: var(--space-2xl);
+  }
+
+  .cta-card {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .founder-section,
+  .community-section {
+    gap: var(--space-3xl);
+  }
+}

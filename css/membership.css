@@ -1,0 +1,356 @@
+/* ========================================
+   MEMBERSHIP PAGE STYLES
+   ======================================== */
+
+/* Hero Section */
+.membership-hero {
+  position: relative;
+  padding: var(--space-5xl) 0;
+  background: var(--color-bg-elevated);
+  overflow: hidden;
+}
+
+.membership-hero .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-glow);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.membership-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+}
+
+/* Value Grid */
+.value-grid {
+  margin-bottom: var(--space-2xl);
+}
+
+.value-card {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  height: 100%;
+}
+
+.value-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(124, 58, 237, 0.14);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent-300);
+  margin: 0 auto;
+}
+
+.value-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+/* Pricing Section */
+.pricing-section {
+  background: var(--gradient-accent-soft);
+}
+
+.pricing-card {
+  padding: var(--space-4xl);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pricing-comparison {
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.comparison-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.comparison-item:last-of-type {
+  border-bottom: 2px solid var(--color-divider);
+}
+
+.comparison-label {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.comparison-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-high);
+  font-family: var(--font-mono);
+}
+
+.comparison-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xl);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.comparison-total .comparison-label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-high);
+}
+
+.comparison-total .comparison-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-accent-300);
+}
+
+.pricing-cta {
+  text-align: center;
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--color-divider);
+}
+
+.pricing-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.pricing-price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-text-high);
+  font-family: var(--font-heading);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: 1.5rem;
+  color: var(--color-text-low);
+  font-weight: 600;
+}
+
+/* Steps Grid */
+.steps-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.step-card {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--gradient-accent);
+  border-radius: 50%;
+  color: var(--color-text-on-accent);
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.faq-item {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+  border-color: var(--color-accent-400);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: none;
+  border: none;
+  color: var(--color-text-high);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.faq-question:hover {
+  color: var(--color-accent-300);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--color-text-low);
+  transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--color-accent-300);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer p {
+  padding: 0 var(--space-xl) var(--space-xl);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--color-text-high);
+}
+
+.modal-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+.modal-content a {
+  color: var(--color-accent-300);
+  text-decoration: underline;
+}
+
+.modal-content a:hover {
+  color: var(--color-accent-400);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-card {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .pricing-price {
+    font-size: 2.5rem;
+  }
+
+  .pricing-period {
+    font-size: 1.25rem;
+  }
+
+  .comparison-item {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .comparison-label {
+    font-size: 0.9rem;
+  }
+
+  .comparison-value {
+    font-size: 1.125rem;
+  }
+
+  .value-card {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .modal-content {
+    padding: var(--space-2xl);
+  }
+}

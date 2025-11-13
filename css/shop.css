@@ -1,0 +1,131 @@
+/* ========================================
+   SHOP PAGE STYLES
+   ======================================== */
+
+/* Page Header */
+.page-header {
+  padding: var(--space-5xl) 0 var(--space-4xl);
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg-app) 100%);
+}
+
+/* Filter Section */
+.filter-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-divider);
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 100;
+  backdrop-filter: saturate(120%) blur(8px);
+}
+
+.filter-bar {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-chip {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.filter-chip:hover {
+  color: var(--color-text-high);
+  border-color: var(--color-accent-400);
+  background-color: rgba(124, 58, 237, 0.08);
+}
+
+.filter-chip.active {
+  color: var(--color-text-on-accent);
+  background-color: var(--color-accent-500);
+  border-color: var(--color-accent-500);
+}
+
+/* Product Cards */
+.products-grid {
+  margin-bottom: var(--space-2xl);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card .card-image {
+  position: relative;
+  margin-bottom: var(--space-lg);
+}
+
+.product-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 10;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-thc {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent-300);
+}
+
+.product-name {
+  font-size: 1.25rem;
+  margin: var(--space-md) 0;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-divider);
+}
+
+.product-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-high);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-bar {
+    gap: var(--space-sm);
+  }
+
+  .filter-chip {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
