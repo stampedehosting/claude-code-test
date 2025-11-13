@@ -1,0 +1,461 @@
+{
+  "_meta": {
+    "name": "XTRACT – Modern Minimal Dark UI • Master Design System",
+    "version": "1.0.0",
+    "description": "Extracted visual DNA from the provided screenshots (Home, About, Blog, Contact). Use as a single source of truth to recreate this exact look across any site.",
+    "notes": [
+      "Values are CSS-ready. HEX is primary, HSL provided where helpful.",
+      "Where screenshots don’t expose exact variables (e.g., precise font), sensible defaults matching the look are specified and include robust fallbacks."
+    ]
+  },
+
+  "foundations": {
+    "colors": {
+      "//": "Primary accent is a cool violet used for CTAs, chips, badges and gradients. Backgrounds are layered neutral-blue blacks; text uses high/med/low contrast grays.",
+      "palette": {
+        "accent": {
+          "50":  "#efe9ff",
+          "100": "#dcd0ff",
+          "200": "#bea6ff",
+          "300": "#a17dff",
+          "400": "#8f66ff",
+          "500": "#7c3aed",        "// primary accent (buttons, highlights)",
+          "600": "#6b2edd",
+          "700": "#5b25c6",
+          "800": "#4b1fa5",
+          "900": "#3a1a82"
+        },
+        "background": {
+          "app":        "#0e0f12",  "// page canvas; near-black with slight blue tint",
+          "elevated":   "#13141a",  "// sections / strips behind content",
+          "card":       "#181a22",  "// surface for cards (blog, features, team)",
+          "cardAlt":    "#1b1e27",  "// hovered/featured surface"
+        },
+        "text": {
+          "high":   "#ffffff",
+          "muted":  "#c9cbd3",      "// body copy on dark",
+          "low":    "#9aa0ab",      "// captions, metadata, helper text",
+          "onAccent": "#0b0b0f"     "// text on violet buttons (appears near-black)"
+        },
+        "lines": {
+          "divider":   "#232633",
+          "border":    "#2b2e3c",
+          "focusRing": "#8f66ff"    "// shadow/focus indicators"
+        },
+        "states": {
+          "hover":       "#8f66ff",  "// accent hover",
+          "pressed":     "#6b2edd",
+          "link":        "#a17dff",
+          "linkHover":   "#bea6ff",
+          "success":     "#1db954",
+          "warning":     "#f59e0b",
+          "error":       "#ef4444",
+          "info":        "#60a5fa"
+        },
+        "gradients": {
+          "accentSweep": "linear-gradient(135deg, #5b25c6 0%, #7c3aed 40%, #a17dff 100%)",
+          "accentSoft":  "linear-gradient(90deg, rgba(124,58,237,0.20) 0%, rgba(159,103,255,0.14) 100%)",
+          "footerGlow":  "radial-gradient(120% 80% at 50% 0%, rgba(124,58,237,0.25) 0%, rgba(14,15,18,0.0) 60%)"
+        }
+      }
+    },
+
+    "typography": {
+      "//": "Headlines are bold, wide, modern sans; body is highly legible geometric/humanist sans.",
+      "stacks": {
+        "heading": "\"Manrope\", \"Inter\", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "body":    "\"Inter\", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "mono":    "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace"
+      },
+      "scale": {
+        "//": "Based on a fluid 1.125–1.25 modular scale. Clamp ensures graceful resizing.",
+        "h1":   { "size": "clamp(2.25rem, 2.2rem + 1.2vw, 3.25rem)", "weight": 800, "lineHeight": 1.08, "letterSpacing": "-0.01em", "family": "heading", "color": "text.high" },
+        "h2":   { "size": "clamp(1.75rem, 1.6rem + 0.9vw, 2.5rem)",  "weight": 800, "lineHeight": 1.12, "letterSpacing": "-0.005em", "family": "heading", "color": "text.high" },
+        "h3":   { "size": "clamp(1.375rem, 1.3rem + 0.6vw, 1.75rem)","weight": 700, "lineHeight": 1.18, "letterSpacing": "0em",       "family": "heading", "color": "text.high" },
+        "h4":   { "size": "1.25rem",  "weight": 700, "lineHeight": 1.22, "letterSpacing": "0em", "family": "heading", "color": "text.high" },
+        "body": { "size": "1rem",     "weight": 400, "lineHeight": 1.7,  "letterSpacing": "0em", "family": "body",    "color": "text.muted" },
+        "small":{ "size": "0.875rem", "weight": 400, "lineHeight": 1.6,  "letterSpacing": "0.01em", "family": "body", "color": "text.low" },
+        "meta": { "size": "0.75rem",  "weight": 600, "lineHeight": 1.4,  "letterSpacing": "0.06em", "family": "body", "transform": "uppercase", "color": "text.low" },
+        "nav":  { "size": "0.95rem",  "weight": 600, "lineHeight": 1.4,  "letterSpacing": "0.01em", "family": "body", "color": "text.muted" },
+        "button": { "size": "0.95rem", "weight": 700, "lineHeight": 1.0, "letterSpacing": "0.01em", "family": "body", "transform": "none", "color": "text.onAccent" }
+      }
+    },
+
+    "spacing": {
+      "//": "8px base grid with extended steps for large vertical rhythm.",
+      "unit": 8,
+      "scale": {
+        "xs": 4,
+        "sm": 8,
+        "md": 12,
+        "lg": 16,
+        "xl": 24,
+        "2xl": 32,
+        "3xl": 40,
+        "4xl": 56,
+        "5xl": 72,
+        "sectionY": 104   // default vertical spacing between major sections
+      },
+      "containers": {
+        "maxWidth": "1200px",
+        "gutterX": "24px",
+        "padX": "clamp(16px, 3vw, 32px)",
+        "contentNarrow": "880px"  // used in blog hero/FAQ
+      },
+      "grid": {
+        "columns": 12,
+        "gap": "24px",
+        "cardGrid": { "min": "280px", "gap": "24px" } // CSS grid: repeat(auto-fit, minmax(min, 1fr))
+      }
+    },
+
+    "radius": {
+      "//": "Rounded but crisp; matches screenshots.",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "20px",
+      "pill": "999px"
+    },
+
+    "shadows": {
+      "//": "Subtle elevated shadows; accent ring for focus.",
+      "card": "0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.02)",
+      "cardHover": "0 12px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(159,103,255,0.08)",
+      "focusRing": "0 0 0 3px rgba(159,103,255,0.35)"
+    },
+
+    "effects": {
+      "backdrop": "backdrop-filter: saturate(120%) blur(8px);",
+      "glassCard": "background: rgba(24,26,34,0.85); border: 1px solid rgba(255,255,255,0.04);"
+    },
+
+    "transitions": {
+      "fast": "120ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "base": "200ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "slow": "320ms cubic-bezier(0.2, 0.8, 0.2, 1)"
+    },
+
+    "breakpoints": {
+      "xs": "360px",
+      "sm": "480px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px"
+    }
+  },
+
+  "components": {
+    "navbar": {
+      "//": "Left logo, centered links (or left), right CTA. Sticky with subtle divider.",
+      "height": "64px",
+      "background": "colors.palette.background.app",
+      "borderBottom": "1px solid colors.palette.lines.divider",
+      "link": {
+        "typography": "typography.scale.nav",
+        "color": "colors.palette.text.muted",
+        "hoverColor": "colors.palette.text.high",
+        "paddingX": "12px",
+        "paddingY": "8px",
+        "activeIndicator": {
+          "height": "2px",
+          "radius": "radius.sm",
+          "color": "colors.palette.accent.500"
+        }
+      },
+      "ctaButton": { "$ref": "components.buttons.primary" },
+      "mobile": {
+        "behavior": "hamburger-drawer",
+        "drawerBg": "colors.palette.background.elevated",
+        "drawerLinkSpacingY": "12px"
+      }
+    },
+
+    "hero": {
+      "//": "Center-aligned headline, short paragraph, horizontal CTAs. Can include faint radial glow behind heading.",
+      "layout": {
+        "align": "center",
+        "maxWidth": "spacing.containers.contentNarrow",
+        "padY": "clamp(64px, 12vh, 120px)"
+      },
+      "heading": { "$ref": "typography.scale.h1" },
+      "subheading": { "$ref": "typography.scale.body", "color": "colors.palette.text.low" },
+      "ctaRow": {
+        "gap": "16px",
+        "primary": { "$ref": "components.buttons.primary" },
+        "secondary": { "$ref": "components.buttons.secondary" }
+      },
+      "backgroundFX": "colors.palette.gradients.footerGlow"
+    },
+
+    "cards": {
+      "base": {
+        "background": "colors.palette.background.card",
+        "border": "1px solid colors.palette.lines.border",
+        "radius": "radius.lg",
+        "shadow": "shadows.card",
+        "pad": "24px",
+        "hover": { "background": "colors.palette.background.cardAlt", "shadow": "shadows.cardHover", "translateY": "-2px", "transition": "transitions.base" }
+      },
+      "blogCard": {
+        "//": "Image on top (16:10), meta chip, title, excerpt",
+        "image": { "ratio": "16/10", "radius": "radius.md", "marginBottom": "16px", "hoverZoom": "scale(1.03)" },
+        "meta": { "style": "chip", "bg": "rgba(124,58,237,0.12)", "color": "colors.palette.accent.300", "padX": "10px", "padY": "6px", "radius": "radius.pill", "font": "typography.scale.meta" },
+        "title": { "$ref": "typography.scale.h4" },
+        "excerpt": { "$ref": "typography.scale.small" },
+        "action": { "type": "link", "color": "colors.palette.link", "hoverColor": "colors.palette.linkHover" }
+      },
+      "featureCard": {
+        "//": "Icon chip + short heading + body",
+        "iconChip": { "size": "44px", "radius": "radius.md", "bg": "rgba(124,58,237,0.14)", "color": "colors.palette.accent.300" },
+        "title": { "$ref": "typography.scale.h4" },
+        "body": { "$ref": "typography.scale.small" }
+      },
+      "teamCard": {
+        "image": { "ratio": "3/4", "radius": "16px" },
+        "name": { "size": "1.05rem", "weight": 700, "color": "colors.palette.text.high" },
+        "role": { "size": "0.9rem", "weight": 500, "color": "colors.palette.text.low" }
+      },
+      "testimonialCard": {
+        "quote": { "size": "1rem", "lineHeight": 1.7, "color": "colors.palette.text.muted" },
+        "author": { "size": "0.95rem", "weight": 700, "color": "colors.palette.text.high" }
+      }
+    },
+
+    "buttons": {
+      "primary": {
+        "bg": "colors.palette.accent.500",
+        "bgHover": "colors.palette.accent.600",
+        "bgActive": "colors.palette.accent.700",
+        "text": "colors.palette.text.onAccent",
+        "radius": "radius.pill",
+        "padX": "20px",
+        "padY": "12px",
+        "shadow": "0 8px 16px rgba(124,58,237,0.28)",
+        "transition": "transitions.base"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "colors.palette.text.high",
+        "border": "1px solid colors.palette.lines.border",
+        "hover": { "border": "1px solid colors.palette.accent.400", "bg": "rgba(124,58,237,0.08)" },
+        "radius": "radius.pill",
+        "padX": "18px",
+        "padY": "12px"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "text": "colors.palette.link",
+        "hover": { "text": "colors.palette.linkHover" },
+        "underline": true
+      },
+      "badge": {
+        "bg": "rgba(124,58,237,0.14)",
+        "text": "colors.palette.accent.300",
+        "radius": "radius.pill",
+        "padX": "10px",
+        "padY": "6px",
+        "font": "typography.scale.meta"
+      }
+    },
+
+    "forms": {
+      "//": "Contact page & newsletter.",
+      "label": { "size": "0.9rem", "weight": 600, "color": "colors.palette.text.low" },
+      "input": {
+        "bg": "#111218",
+        "text": "colors.palette.text.high",
+        "placeholder": "#7e8593",
+        "border": "1px solid colors.palette.lines.border",
+        "radius": "12px",
+        "pad": "14px 16px",
+        "focus": { "border": "1px solid colors.palette.accent.400", "shadow": "shadows.focusRing" }
+      },
+      "textarea": { "$ref": "components.forms.input", "minHeight": "160px" },
+      "submit": { "$ref": "components.buttons.primary", "width": "100%" },
+      "inlineNewsletter": {
+        "containerBg": "colors.palette.background.card",
+        "inputWidth": "min(360px, 60%)",
+        "buttonWidth": "auto"
+      }
+    },
+
+    "icons": {
+      "size": "20px",
+      "color": "colors.palette.text.low",
+      "spacingRight": "8px",
+      "setStyle": "outline/line icons"
+    },
+
+    "images": {
+      "//": "Blog and feature imagery are glossy abstract 3D shapes on dark. Maintain consistent radii and ratios.",
+      "defaultRadius": "16px",
+      "ratios": { "hero": "21/9", "card": "16/10", "team": "3/4" },
+      "hover": { "scale": "1.03", "transition": "transitions.slow" }
+    },
+
+    "links": {
+      "color": "colors.palette.states.link",
+      "hoverColor": "colors.palette.states.linkHover",
+      "underline": false,
+      "hoverUnderline": true,
+      "transition": "transitions.fast"
+    },
+
+    "faq": {
+      "item": {
+        "bg": "colors.palette.background.card",
+        "border": "1px solid colors.palette.lines.border",
+        "radius": "radius.lg",
+        "pad": "20px",
+        "title": { "size": "1rem", "weight": 700, "color": "colors.palette.text.high" },
+        "body":  { "size": "0.95rem", "color": "colors.palette.text.muted" },
+        "chevron": { "size": "18px", "color": "colors.palette.text.low" }
+      }
+    },
+
+    "footer": {
+      "background": "colors.palette.background.app",
+      "overlay": "colors.palette.gradients.footerGlow",
+      "dividerTop": "1px solid colors.palette.lines.divider",
+      "padY": "56px",
+      "columns": 4,
+      "heading": { "size": "0.95rem", "weight": 800, "color": "colors.palette.text.high" },
+      "link": { "size": "0.95rem", "color": "colors.palette.text.muted", "hoverColor": "colors.palette.text.high" },
+      "newsletter": { "$ref": "components.forms.inlineNewsletter" },
+      "legal": { "size": "0.8rem", "color": "colors.palette.text.low" }
+    }
+  },
+
+  "interactive": {
+    "hover": {
+      "button": "filter: brightness(1.02); transform: translateY(-1px);",
+      "card": "transform: translateY(-2px);",
+      "image": "transform: scale(1.03);"
+    },
+    "active": {
+      "button": "transform: translateY(0); filter: brightness(0.98);"
+    },
+    "focus": {
+      "outline": "none",
+      "ring": "shadows.focusRing"
+    },
+    "loading": {
+      "spinner": {
+        "size": "22px",
+        "border": "2px solid rgba(255,255,255,0.15)",
+        "borderTop": "2px solid colors.palette.accent.400",
+        "radius": "50%",
+        "animation": "spin 900ms linear infinite"
+      }
+    }
+  },
+
+  "pages": {
+    "home": {
+      "hero": { "$ref": "components.hero" },
+      "features": {
+        "grid": { "template": "repeat(auto-fit, minmax(spacing.grid.cardGrid.min, 1fr))", "gap": "spacing.grid.cardGrid.gap" },
+        "card": { "$ref": "components.cards.featureCard" }
+      },
+      "process": {
+        "steps": { "count": 3, "style": "numbered", "card": { "$ref": "components.cards.base" } }
+      },
+      "benefits": {
+        "grid": { "columns": 3, "gap": "24px" },
+        "card": { "$ref": "components.cards.base" }
+      },
+      "pricing": {
+        "tierCard": {
+          "$ref": "components.cards.base",
+          "highlighted": { "border": "1px solid colors.palette.accent.400", "shadow": "0 0 0 1px rgba(159,103,255,0.1), 0 18px 36px rgba(0,0,0,0.5)" }
+        }
+      },
+      "testimonials": { "card": { "$ref": "components.cards.testimonialCard" } },
+      "faq": { "$ref": "components.faq" }
+    },
+
+    "about": {
+      "statsRow": {
+        "item": { "bg": "colors.palette.background.card", "border": "1px solid colors.palette.lines.border", "radius": "radius.lg", "pad": "20px" }
+      },
+      "valuesGrid": { "columns": 4, "gap": "20px", "card": { "$ref": "components.cards.featureCard" } },
+      "whyUsComparison": {
+        "tableStyle": "two-column comparison",
+        "leftCol": { "title": "Manual Work" },
+        "rightCol": { "title": "Xtract AI Automation", "accentBorder": true }
+      },
+      "team": { "card": { "$ref": "components.cards.teamCard" } }
+    },
+
+    "blog": {
+      "hero": { "badge": { "$ref": "components.buttons.badge" }, "title": { "$ref": "typography.scale.h1" }, "desc": { "$ref": "typography.scale.body" } },
+      "grid": { "template": "repeat(auto-fit, minmax(300px, 1fr))", "gap": "24px" },
+      "card": { "$ref": "components.cards.blogCard" }
+    },
+
+    "contact": {
+      "hero": { "title": { "$ref": "typography.scale.h1" }, "desc": { "$ref": "typography.scale.body" } },
+      "infoCards": { "email": { "$ref": "components.cards.base" }, "phone": { "$ref": "components.cards.base" } },
+      "form": { "$ref": "components.forms", "width": "min(860px, 100%)", "pad": "24px" }
+    },
+
+    "footer": { "$ref": "components.footer" }
+  },
+
+  "responsive": {
+    "//": "Guidance for stacking & scaling.",
+    "typography": {
+      "reduceH1BelowMd": "font-size: clamp(1.8rem, 1.5rem + 3vw, 2.4rem)",
+      "reduceBodyBelowSm": "font-size: 0.95rem"
+    },
+    "layout": {
+      "sectionY": {
+        "lg+": "spacing.scale.sectionY",
+        "md": 88,
+        "sm": 72,
+        "xs": 64
+      },
+      "grids": {
+        "cards": { "lg": 3, "md": 2, "sm": 1 },
+        "features": { "lg": 4, "md": 2, "sm": 1 }
+      }
+    },
+    "navigation": {
+      "desktop": "inline links + primary CTA",
+      "mobile": "hamburger -> full-height drawer; links become stacked with 16px spacing; CTA placed last"
+    }
+  },
+
+  "tokens": {
+    "//": "Quick access CSS variables suggestion.",
+    "cssVariables": {
+      "--color-bg-app":        "#0e0f12",
+      "--color-bg-elevated":   "#13141a",
+      "--color-bg-card":       "#181a22",
+      "--color-text-high":     "#ffffff",
+      "--color-text-muted":    "#c9cbd3",
+      "--color-text-low":      "#9aa0ab",
+      "--color-accent":        "#7c3aed",
+      "--color-accent-600":    "#6b2edd",
+      "--color-border":        "#2b2e3c",
+      "--radius-lg":           "16px",
+      "--shadow-card":         "0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.02)",
+      "--transition":          "200ms cubic-bezier(0.2, 0.8, 0.2, 1)"
+    }
+  },
+
+  "usage": {
+    "do": [
+      "Use accent gradient on key CTAs and section headers sparingly to keep the minimal feel.",
+      "Maintain large whitespace (72–104px) between major sections.",
+      "Use uppercase meta chips for categories/resources labels."
+    ],
+    "dont": [
+      "Don’t mix warm accent colors; keep the palette cool and consistent.",
+      "Don’t add heavy borders; prefer subtle 1px lines and soft shadows.",
+      "Don’t overuse gradients; most surfaces are flat dark neutrals."
+    ]
+  }
+}
